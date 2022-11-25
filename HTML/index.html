@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<script src="app.js" charset="utf-8" defer></script>
+
+	<title>Flying Car Endless Runner</title>
+
+	<style>
+		body
+		{
+			margin: 0;
+			padding: -1vw;
+			background-color: #325D7F;
+			/* overflow-y: hidden; */
+		}
+
+		img
+		{
+			width: 100%;	
+		}
+
+		.myGrid
+		{
+			position: relative;
+			z-index: 1000;
+			opacity: 0;		
+		}
+
+		.frame
+		{
+			position: absolute;
+			top: 0;
+			background: transparent;
+			z-index: 100;
+			
+		}
+		.background
+		{
+			position: absolute;
+			top: 8.3vw;
+			left: 12.96vw;
+			width: 75vw;			
+		}
+		
+		@font-face 
+		{
+			font-family: myFirstFont;
+			src: url('font/ot/karmasuture.otf');
+		}
+		.grid
+		{
+			font-family: myFirstFont, Arial, Helvetica, sans-serif;
+			font-size: 2.8vw;
+			letter-spacing: 0.15vw;
+			text-align: between;
+			color: white;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			position: absolute;
+			top: 5vw;
+			left: 18vw;
+			z-index: 10;
+		}
+
+		.heading 
+		{
+			font-size: 3vw;
+
+			visibility: visible;
+		}
+
+		/* @media screen and (max-width: 600px) {
+			#heading 
+			{
+				font-size: 20px;
+			}
+
+			#inst {
+				font-size: 20px;
+			}
+ 
+			}  */
+
+		.gameOver 
+		{
+			top: 50%;
+			justify-content: center;
+			text-align: center;
+
+			visibility: hidden;
+		}
+
+		.insts 
+		{
+			bottom: 60%;
+			text-align: center;
+
+			visibility: visible;
+		}
+		
+		
+		.player 
+		{
+			position: absolute;
+			background-size: 6.555vw auto;
+  			width: 6.555vw;
+  			height: 10.8vw;
+			bottom: 30%;
+  			margin-top: -38px;
+			left: 5.7vw;
+			background-color: transparent;
+			background-repeat: no-repeat;
+			
+			  
+		}
+
+		.obstacle
+		{
+			position: absolute;
+			width: 4.7vw; 
+			height: 18vw;
+			bottom: -17vw;
+			background: transparent;
+			background-image: url(images/building.png);
+			background-size: 4.7vw 17.962vw;
+		}
+
+		.birdObstacle
+		{
+			position: absolute;
+			width: 4vw; 
+			height: 4vw;
+			top: -1.8vw;
+			background: transparent;
+			background-image: url(images/bird1.png);
+			background-size: 4vw auto;
+			background-repeat: no-repeat;
+			z-index: 9;
+		}
+
+		.carObstacle
+		{
+			position: absolute;
+			width: 6.555vw; 
+			height: 10.8vw;
+			top: -3vw;
+			background: transparent;
+			background-image: url(images/flyingCar.png);
+			background-size: 6.555vw auto;
+			background-repeat: no-repeat;
+		}
+
+		.scores
+		{
+			font-family: myFirstFont, Arial, Helvetica, sans-serif;
+			letter-spacing: 0.15vw;
+			/* line-height: 3vw; */
+			position: absolute;
+			top: 3%;
+			right: 3%;
+			text-align: right;
+			width: 40%;
+			height: 25%;
+			font-size: 2.5vw;
+			color: white;
+			z-index: 10;
+		}
+		
+		.highScore
+		{
+			font-size: 1.5vw;
+		}
+
+
+	</style>
+</head>
+<body>
+	<!-- Grid layout -->
+	<div class="myGrid">
+		<img src="images/grid.png">
+	</div>
+
+
+	<!-- Frame -->
+	<div class="frame">
+		<img src="images/frame.png">
+	</div>
+
+		<!-- background -->
+		<div class="background">
+			
+				<img src="images/background.png">
+			
+			
+
+			<!-- Menu -->
+			<div class="grid">  
+				<div class="heading">
+					Flying Car Endless Runner
+				</div>
+
+				<div class="gameOver">
+					Game Over!
+				</div>
+	 
+				<div class="insts">
+					Tab on Screen/Press Space <br/>
+					to avoid Obstacles
+				</div>
+
+			</div>
+		
+			<!-- Player -->
+			<div class="player">
+			</div>
+
+			<!-- High score -->
+			<div class="scores">
+				<span class="score"></span>
+				<br>
+				<span class="highScore"></span>
+			</div>
+
+
+		</div>
+
+
+		
+</body>
+</html>
